@@ -6,11 +6,13 @@ data = list(read_lines(5))
 def map_string(s, f):
     return "".join(f(c) for c in s)
 
+
 def read_binary_string(characters):
     def reader(binary_string):
         return int(map_string(binary_string, remap(characters)), 2)
 
     return reader
+
 
 def remap(characters):
     zero, one = characters
