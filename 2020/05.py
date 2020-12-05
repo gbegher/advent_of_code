@@ -1,5 +1,6 @@
 from data import read_lines
 
+
 data = list(read_lines(5))
 
 
