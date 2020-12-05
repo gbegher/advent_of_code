@@ -29,24 +29,14 @@ def read_seat(seat_string):
         read_binary_string(["L", "R"])(seat_string[-3:]),
     ]
 
+
 def seat_id(seat_string):
     row, col = read_seat(seat_string)
 
     return row * 8 + col
 
+
 def find_gaps(seat_ids):
-    # pos = min(seat_ids)
-
-    # missing = []
-
-    # for seat_id in sorted(seat_ids):
-    #     pos = pos + 1
-    #     missing = [pos, seat_id]
-    #     if seat_id != pos:
-    #         missing = [*missing, seat_id]
-
-    # return missing
-
     for x in range(min(seat_ids), max(seat_ids)):
         if x not in seat_ids:
             yield x
