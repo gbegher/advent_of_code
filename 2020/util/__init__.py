@@ -1,12 +1,22 @@
-def pipe(x):
-    def piper(*functions):
+def apply_to(x, fn):
+    return fn(x)
+
+
+def flip(x):
+    l, r = x
+    return [r, l]
+
+
+def compose(*functions):
+    def composer(x):
         result = x
-        for fn in functions:
-            result = fn(x)
+        for i, fn in enumerate(functions):
+            result = fn(result)
 
         return result
 
-    return piper
+    return composer
+
 
 def filter(generator, predicate):
     for item in generator:

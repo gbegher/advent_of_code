@@ -1,6 +1,6 @@
 from data import read_lines
 
-from util import split_by, pipe, filter
+from util import split_by, filter
 
 
 real_data = list(read_lines(4))
