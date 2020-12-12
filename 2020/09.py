@@ -49,7 +49,7 @@ def is_sum_of(x, xs):
 
 
 def part_1(data, size):
-    for index, item in enumerate(windows(as_ints(data), size)):
+    for item in windows(as_ints(data), size):
         x, window = item
 
         if not is_sum_of(x, window):

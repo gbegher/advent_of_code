@@ -24,6 +24,13 @@ def filter(generator, predicate):
             yield item
 
 
+def map(fn):
+    def mapper(gen):
+        for i in gen:
+            yield fn(i)
+    return mapper
+
+
 def split_by(predicate):
     def splitter(items):
         collected = []
@@ -41,3 +48,7 @@ def split_by(predicate):
             collected = []
 
     return splitter
+
+
+def as_ints(data):
+    return [int(x) for x in data]
