@@ -1,6 +1,11 @@
 from functools import reduce
 
 
+def log(x):
+    print(x)
+    return x
+
+
 def apply_to(x, fn):
     return fn(x)
 
