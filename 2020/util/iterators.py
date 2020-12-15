@@ -41,3 +41,14 @@ def trajectory_fixpoint(operator):
             prev = nxt
 
     return stabilize_trajectory
+
+
+def take(n):
+    def seq(iterator):
+        for index, item in enumerate(iterator):
+            if index < n:
+                yield item
+            else:
+                return
+
+    return seq
