@@ -9,8 +9,8 @@ def trajectory(operator):
     def trajectory_generator(inp):
         current = inp
         while True:
-            current = operator(current)
             yield current
+            current = operator(current)
 
     return trajectory_generator
 
@@ -52,3 +52,14 @@ def take(n):
                 return
 
     return seq
+
+
+def get_nth(n, fallback=None):
+    def getter(iterator):
+        for index, item in enumerate(iterator):
+            if index == n:
+                return item
+
+        return None
+
+    return getter

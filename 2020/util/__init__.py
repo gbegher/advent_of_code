@@ -26,6 +26,9 @@ def compose(*functions):
     return composer
 
 
+pipe = lambda x: lambda *fns: apply_to(x, compose(*fns))
+
+
 def filter(generator, predicate):
     for item in generator:
         if predicate(item):

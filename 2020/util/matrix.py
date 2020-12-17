@@ -38,3 +38,22 @@ def traverse_matrix(matrix):
                 return
 
     return traverse
+
+
+def array_get(index, fallback=None):
+    def getter(array):
+        if 0 <= index < len(array):
+            return array[index]
+        return fallback
+    return getter
+
+
+def plus(v1, v2):
+    return [
+        v1[dim] + v2[dim]
+        for dim in range(len(v1))
+    ]
+
+
+def fill(len, x):
+    return [x for _ in range(len)]

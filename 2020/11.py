@@ -115,6 +115,7 @@ def assert_state_equality(processed, string_notated):
 
 
 assert_trajectory_correctness(seating_rule_1, assert_state_equality)(test_data, [
+    test_data,
     [
         "#.##.##.##",
         "#######.##",
